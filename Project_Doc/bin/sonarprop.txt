@@ -1,0 +1,12 @@
+sonar.projectKey=AllInOneMagic
+sonar.projectName=AllInOneMagic
+sonar.projectVersion=1.0
+sonar.sources=E:/Vianyak/Development_Branch/Dev/AllInOne/src/main/java/com/aio/bootapp
+
+pom plug in
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.0</version>
+			</plugin>
