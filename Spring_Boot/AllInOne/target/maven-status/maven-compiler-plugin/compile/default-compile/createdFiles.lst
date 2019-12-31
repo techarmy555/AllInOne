@@ -1,0 +1,6 @@
+com\aio\bootapp\service\testservice\TestService.class
+com\aio\bootapp\AllInOneApplication.class
+com\aio\bootapp\appconstants\appconstant.class
+com\aio\bootapp\config\SwaggerConfig.class
+com\aio\bootapp\serviceimpl\testserviceimpl\TestServiceImpl.class
+com\aio\bootapp\controllers\testcontroller\TestController.class
