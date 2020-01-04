@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Please Update Interest and Hobbies..<mat-icon style="float: right;cursor:pointer;" (click)="geninput(hobbarrreplica.length)"> add </mat-icon></h1>
+      <div id="idintrnhobb" mat-dialog-content style="overflow:scroll; height:212px;">
+        <mat-form-field class="example-full-width" style="width: 100%;" *ngFor = 'let hobb of hobbarrreplica;let i = index' >
+          
+          <input matInput placeholder="Enter Comment..." (click)="inputclick(hobb);"   [(ngModel)]="hobb.interesthobbies" value="{{hobb.interesthobbies}}" (keyup)="createupdateArr($event,hobb,i,hobbarrreplica.length)">
+          <mat-icon matSuffix (click)="deletecontroll(hobb.id,i,hobb,hobbarrreplica.length);" style="cursor:pointer" *ngIf='i > 2' (keyup)="createupdateArr($event,hobb)">delete</mat-icon>
+          <!-- <input matInput placeholder="Enter Comment..." value="{{hobb.interesthobbies}}"><mat-icon style="float: right;cursor:pointer;" (click)="geninput()"> add </mat-icon> -->
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions style="float: right;">
+        <button mat-button (click)="onNoClickfrall()">No Thanks</button>
+        <button mat-button [mat-dialog-close]=""  (click)="onOkClick();" cdkFocusInitial>Ok</button>
+      </div>

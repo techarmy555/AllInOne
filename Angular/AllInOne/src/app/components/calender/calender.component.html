@@ -1,0 +1,9 @@
+
+        <ax-scheduler  [axSchedulerView]="'week'"
+          [axEventToolbar]="model.toolbar" [axAnimation]="model.animation" [axTheme]="model.theme" [axEvents]="events"
+          [axDragStep]="model.step" [axShowLocale]="model.locale" (axEventClick)="clickEvent($event)" (axEventEditClick)="editEvent($event,myeditevent)"
+          (axEventDeleteClick)="removeEvent($event)"></ax-scheduler>
+
+          <ng-template  #myeditevent>
+            <app-edit-event [eventArr]='getEventArray()'></app-edit-event>
+          </ng-template>

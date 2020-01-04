@@ -1,0 +1,39 @@
+<mat-nav-list>
+    <mat-accordion>
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Job Function
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+              Type your name and age
+            </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <mat-checkbox  id="{{jobfunarr.key}}" value="{{jobfunarr.key}}" (change)="changechkfunction('empjobfunction',jobfunarr.key,$event)"  *ngFor="let jobfunarr of jobarr">{{jobfunarr.key}}</mat-checkbox>
+        <!-- <mat-checkbox  id="{{jobfunarr.key}}" value="{{jobfunarr.key}}" (change)="changechkfunction('empjobfunction',jobfunarr.key,$event)"  *ngFor="let jobfunarr of jobarr">{{jobfunarr.key}}</mat-checkbox> -->
+        
+      </mat-expansion-panel>
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Job Sub Function
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <mat-checkbox *ngFor="let jobsubfunarr of subjobarr" (change)="changechkfunction('empjobsubfuncion',jobsubfunarr.key,$event)">{{jobsubfunarr.key}}</mat-checkbox>
+      </mat-expansion-panel>
+      <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Location
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <mat-checkbox *ngFor="let locarrrr of locaarr" (change)="changechkfunction('location',locarrrr.key,$event)">{{locarrrr.key}}</mat-checkbox>
+        </mat-expansion-panel>
+    </mat-accordion>
+  </mat-nav-list>

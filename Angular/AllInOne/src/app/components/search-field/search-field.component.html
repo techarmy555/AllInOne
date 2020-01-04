@@ -1,0 +1,24 @@
+<div class="" layout-align="center center">
+  <mat-form-field class="" style="width: 93%;margin:auto">
+    <input matInput placeholder="Please Enter Keyword to Search...." (keyup.enter)="searchPeople();" [(ngModel)]="searchkey">
+
+    <emoji-mart (emojiClick)="PlaceEmojis($event)" title="Pick your emoji…" emoji="point_up"></emoji-mart>
+    
+
+    <mat-icon matSuffix style="cursor: pointer;" (click)="searchPeople();">search</mat-icon>
+    <mat-select  [(value)]="selected" id="advsrch" class="searchSelect" style="width: 29%;float: right;margin-top: -2%;" [(ngModel)]="selectedValue" >
+      <mat-option id="readyclient" value="readyclient">Advance Search</mat-option>
+      <mat-option id="readyclient" value="readyclient">readyclient</mat-option>
+      <mat-option id="empname" value="empname">Name</mat-option>
+      <mat-option id="askmeabout" value="askmeabout">Ask me about</mat-option>
+      <mat-option id="spklang" value="spklang">Spoken Languages</mat-option>
+      <mat-option id="education" value="education">Education</mat-option>
+      <mat-option id="certificate" value="certificate">Certification</mat-option>
+      <mat-option id="communities" value="communities">G + Communities and Collection</mat-option>
+      <mat-option id="hobbies" value="hobbies">Interests and hobbies</mat-option>
+      <mat-option id="countries" value="countries">Countries worked in</mat-option>
+      <mat-option id="trade" value="trade">Trade association</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+</div>

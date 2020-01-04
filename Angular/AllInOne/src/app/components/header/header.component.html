@@ -1,0 +1,64 @@
+<mat-toolbar color="primary">
+  <div class="header-main" style="width: 500px;"  (click)="gotoHome()">
+    <span>AmigoBook</span>
+
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  
+
+  <button mat-flat-button  class="usermenu-drop-down" color="primary" *ngIf="routerUrl == '/login'" (click)="gotoRegistration();">Registration</button>
+  <!-- <mat-form-field>
+    <mat-label>Select Language</mat-label>
+    <mat-select (selectionChange)="selectLanguage($event.value)">
+      <mat-option value="en">
+        English
+      </mat-option>
+      <mat-option value="mr">
+        Marathi
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+  <!-- <button mat-button [matMenuTriggerFor]="menu2" class="usermenu-drop-down">Language
+    
+    <mat-icon role="img" aria-hidden="true">arrow_drop_down</mat-icon></button>
+  <mat-menu #menu2>
+    <button mat-menu-item (click)="selectLanguage(en);">English</button>
+    <button mat-menu-item (click)="selectLanguage(mr);">Marathi</button>
+  </mat-menu>
+
+
+  <button mat-button [matMenuTriggerFor]="menu1" *ngIf="routerUrl !== '/login' && routerUrl !== '/registration'" class="usermenu-drop-down">{{username}}
+    
+    <mat-icon role="img" aria-hidden="true">arrow_drop_down</mat-icon></button>
+  <mat-menu #menu1>
+    <button mat-menu-item (click)="gotomyprofile();">My Profile</button>
+    <button mat-menu-item (click)="logout();">Logout</button>
+  </mat-menu> -->
+
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu1" 
+     >Language</button>
+    <mat-menu #menu1="matMenu" overlapTrigger="false">
+       <span >
+        <button mat-menu-item (click)="selectLanguage('en');">English</button>
+        <button mat-menu-item (click)="selectLanguage('mr');">Marathi</button>
+       </span>
+   </mat-menu>
+   </div>
+   
+   <!-- component2 -->
+   <div>
+   <button mat-button [matMenuTriggerFor]="menu2" *ngIf="routerUrl !== '/login' && routerUrl !== '/registration'"
+     >Trigger2</button>
+   <mat-menu #menu2="matMenu" overlapTrigger="false">
+       <span >
+        <button mat-menu-item (click)="gotomyprofile();">My Profile</button>
+        <button mat-menu-item (click)="logout();">Logout</button>
+       </span>
+    </mat-menu>
+   </div>
+
+</mat-toolbar>

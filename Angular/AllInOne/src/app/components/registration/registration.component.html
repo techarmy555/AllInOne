@@ -1,0 +1,69 @@
+<mat-card class="login-card">
+
+  <!--<mat-card-title>People Finder</mat-card-title>-->
+  <h1>Registration Form</h1>
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-form">
+
+    <mat-form-field class="login-full-width">
+      <input  matInput  placeholder="Username" name="username" formControlName="username" (ngModelChange)="clearUserIcon()" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+      <mat-icon matSuffix (click)="isUserExistDB()"  title="Check here to Check if User is Exist.....">{{isUserExist ? 'done_outline' : 'help_outline'}}</mat-icon>
+      <mat-error *ngIf="f.username.errors">
+        <mat-error *ngIf="f.username.errors.required">Username is required</mat-error>
+        <mat-error *ngIf="f.username.errors.minlength">You must have 5 Charachter</mat-error>
+      </mat-error> 
+      
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Email" name="email" formControlName="email" (ngModelChange)="clearEmailIcon()" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+      <mat-icon matSuffix (click)="isEmailExistDB()">{{isEmailExist ? 'done_outline' : 'help_outline'}}</mat-icon>
+      <mat-error *ngIf="submitted && f.email.errors">
+        <mat-error *ngIf="f.email.errors.required">Email is required</mat-error>
+        <mat-error *ngIf="f.email.errors.email">Email is not Valid</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      <input  placeholder="Mobile" name="mobile"  formControlName="mobile" (ngModelChange)="clearMobileIcon()" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" matInput>
+       <mat-icon matSuffix (click)="isMobileExistDB()">{{isMobileExist ? 'done_outline' : 'help_outline'}}</mat-icon>
+      <mat-error *ngIf="submitted && f.mobile.errors">
+        <mat-error *ngIf="f.mobile.errors.required">Mobile Number is required</mat-error>
+        <mat-error *ngIf="f.mobile.errors.pattern">Please Enter Valid Mobile NO.</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="login-full-width">
+      <input placeholder="Password" name="password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+        matInput  [type]="hide ? 'password' : 'text'" >
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="submitted && f.password.errors">
+        <mat-error *ngIf="f.password.errors.required">Password is required</mat-error>
+        <mat-error *ngIf="f.password.errors.pattern">Password must Match Criteria</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="login-full-width">
+      <input matInput  placeholder="Re-Enter Password" name="retypepassword" formControlName="retypepassword" [ngClass]="{ 'is-invalid': submitted && f.retypepassword.errors }"
+        [type]="hide1 ? 'password' : 'text'"  required>
+      <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="submitted && f.retypepassword.errors">
+        <mat-error *ngIf="f.retypepassword.errors.required">Please Re-Enter Password</mat-error>
+        <mat-error *ngIf="f.retypepassword.errors.mustMatch">Password Not Match</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <div mat-dialog-actions>
+      <button mat-raised-button type="submit" [disabled]="loading" color="primary">Sign In</button>
+    </div>
+    <div *ngIf="error" class="alert alert-danger">{{resp.result}}</div>
+    <mat-progress-bar class="progressbar" *ngIf="loading" color="warn" mode="indeterminate"></mat-progress-bar>
+  </form>
+
+
+  
+  <button mat-button color="primary" (click)="toggleDisabled()">Toggle Disable</button>
+</mat-card>
