@@ -23,7 +23,7 @@ public class AllInOneApplication {
 	private static void OpenSwagger() {
 		try {
 			Runtime rt = Runtime.getRuntime();
-			rt.exec("rundll32 url.dll,FileProtocolHandler " + "http://localhost:5959/swagger-ui.html#/");
+			rt.exec("rundll32 url.dll,FileProtocolHandler " + "http://localhost:5959/AllInOne/swagger-ui.html#/");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
