@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container" style="height: 89%;">
+  <mat-drawer mode="side" opened class="leftNavPanel">
+      <app-refined-by></app-refined-by>
+  </mat-drawer>
+  
+  <mat-drawer-content (scroll)="scrollHandler($event,this)">
+        <app-search-info style="position: fixed;z-index: 9;width: 84%;"></app-search-info>
+      <app-people-list ></app-people-list>
+  </mat-drawer-content>
+</mat-drawer-container>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#fff" type="ball-atom"></ngx-spinner>

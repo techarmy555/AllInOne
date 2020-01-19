@@ -1,0 +1,368 @@
+<mat-drawer-container class="example-container" *ngFor="let ppl of peoples">
+  
+  <mat-drawer-content class="pf-info-main">
+    <mat-grid-list cols="5">
+      <mat-grid-tile >
+        <div style="text-align: center;">
+          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="margin: auto;width: 50%;padding: 10px;max-width: 100px; max-height: 1 00px;border-radius: 50%;">
+          <div style="text-align: center;">
+            <div class="pf-name">
+              <h4>{{ppl._source.employeename}}</h4>
+              <p>{{ppl._source.preffirstname}}</p>
+            </div>
+          </div>
+          <i class="fa fa-share-alt" style="font-size:15px;text-align: right;color:#007bff;" (click)="shareService();"></i>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <!-- <div style="text-align: center;">
+          <h3>Business Title</h3>
+          <h5>{{ppl._source.empbusinesstitle}}</h5>
+          <br />
+          <br />
+          <div>
+            <mat-icon> contact_phone </mat-icon>&nbsp;&nbsp;&nbsp;<span>{{ppl._source.empoibusnphone==""?"not
+              provided":ppl._source.empoibusnphone}}</span>
+          </div>
+          <div>
+            <mat-icon> mobile_screen_share </mat-icon>&nbsp;&nbsp;&nbsp;<span>{{ppl._source.empoibusnphone==""?"not
+              provided":ppl._source.empoibusnphone}}</span>
+          </div>
+          <div>
+            <mat-icon> smartphone </mat-icon>&nbsp;&nbsp;&nbsp;<span>9594784429</span>
+          </div>
+          <br />
+        </div> -->
+        <div class="pf-title">
+          <h3>Business Title</h3> 
+          <h5>{{ppl._source.empbusinesstitle}}</h5>
+        
+          <div class="contact-info">
+            <div><i class="icn1"></i><span>{{ppl._source.empoibusnphone==""?"not
+              provided":ppl._source.empoibusnphone}}</span></div>
+            <div><i class="icn2"></i><span>{{ppl._source.empoibusnphone==""?"not
+              provided":ppl._source.empoibusnphone}}</span></div>
+            <div><i class="icn3"></i><span>{{ppl._source.empoibusnphone==""?"not
+                  provided":ppl._source.empoibusnphone}}</span></div>
+          </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+
+        <!-- <div style="text-align: center;">
+          <h3>Job Function</h3>
+          <h5>
+            {{ppl._source.empjobfunction==""?"not
+            provided":ppl._source.empjobfunction}}
+          </h5>
+          <br />
+
+          <br />
+          <div>
+            <mat-icon> contact_phone </mat-icon>&nbsp;&nbsp;&nbsp;<span>{{ppl._source.emplocation==""?"not
+              provided":ppl._source.emplocation}}</span>
+          </div>
+          <div>
+            <mat-icon> mobile_screen_share </mat-icon>&nbsp;&nbsp;&nbsp;<span>
+              {{ppl._source.employeeemail==""?"not
+              provided":ppl._source.employeeemail}}
+            </span>
+          </div>
+          <br />
+          <br />
+        </div> -->
+        <div class="pf-title">
+          <h3>Job Function</h3>
+          <h5> {{ppl._source.empjobfunction==""?"not
+              provided":ppl._source.empjobfunction}}</h5>
+         
+        <div class="contact-info location-blck">
+          <div>
+            <i class="icn5"></i><span>{{ppl._source.emplocation==""?"not
+                provided":ppl._source.emplocation}}</span>
+          </div>
+          <div>
+            <i class="icn6"></i><span>{{ppl._source.employeeemail==""?"not
+                provided":ppl._source.employeeemail}}</span>
+          </div>
+          <br />
+          <br />
+         </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <!-- <div style="text-align: center;">
+          <h3>Job Sub Function</h3>
+          <h5>
+            {{ppl._source.empjobsubfuncion==""?"not
+            provided":ppl._source.empjobsubfuncion}}</h5>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div> -->
+        <div class="pf-title">
+          <h3>Job Sub Function</h3>
+          <h5>{{ppl._source.empjobsubfuncion==""?"not
+              provided":ppl._source.empjobsubfuncion}}</h5>     
+              <br />
+              <br />
+              <br />
+              <br />   
+              <br />
+        </div>
+       
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <!-- <div style="text-align: center;">
+          <h3>Service Line</h3>
+          <h5>
+            {{ppl._source.empserviceline==""?"not
+            provided":ppl._source.empserviceline}}
+          </h5>
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <br />
+          <br />
+          <br />
+        </div> -->
+        <div class="pf-title">
+          <h3>Service Line</h3>
+          <h5> {{ppl._source.empserviceline==""?"not
+              provided":ppl._source.empserviceline}}</h5>  
+              <br />
+              <br />
+              <br />
+              <br />     
+              <br />
+        </div>
+      
+      </mat-grid-tile>
+
+    </mat-grid-list>
+    <mat-card style="width: 85%;margin: 0 auto;">
+      <mat-card-header>
+        <mat-card-title>About Me
+        </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+
+        <mat-grid-list cols="4" rowHeight="35px">
+          <mat-grid-tile *ngFor="let abtmearr of ppl._source.empaboutme">
+            {{abtmearr.aboutme}}
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+
+    </mat-card>
+    <mat-accordion>
+      <mat-expansion-panel style="width: 85%;margin: 14px auto;">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Extra Information
+          </mat-panel-title>
+          <mat-panel-description>
+            Click Heare to get Extra Information....
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Addition Information</mat-card-title>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <!-- <mat-icon style="cursor: pointer;" (click)="openDialogfrnw(myspoklangtemplate)">edit</mat-icon> -->
+
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="2" rowHeight="2:1">
+                  <mat-grid-tile>
+                    1
+                  </mat-grid-tile>
+
+                  <mat-grid-tile>
+                    2
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    3
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Google+ Communities and Collections</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let abtmearr of ppl._source.empcommunities">
+                    {{abtmearr.keyword}}
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Professional networks</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="1" rowHeight="35px">
+                  <mat-grid-tile>
+                    1
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Experience and industries</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let exparr of ppl._source.empexperiences">
+                    {{exparr.experiences}}
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+
+              <mat-card-header>
+                <mat-card-title>Spoken languages</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let langarr of ppl._source.empsplanguage">
+                    {{langarr.splanguage}}
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+
+              <mat-card-header>
+                <mat-card-title>Interests and hobbies</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let hobbarr of ppl._source.empinteresthobbies">
+                    {{hobbarr.interesthobbies}}
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Education</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let eduarr of ppl._source.empeducation">
+                    {{eduarr.education}}
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Countries worked in</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let ctryarr of ppl._source.empcountriesworked">
+                    {{ctryarr.countriesworked}}
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Certifications</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let certarr of ppl._source.empcertification">
+                    {{certarr.certification}}
+                  </mat-grid-tile>
+
+                </mat-grid-list>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="extra-card">
+              <mat-card-header>
+                <mat-card-title>Trade association affiliations</mat-card-title>
+                
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <mat-grid-list cols="3" rowHeight="35px">
+                  <mat-grid-tile *ngFor="let tradearr of ppl._source.emptradesassociation	">
+                    {{tradearr.tradesassociation}}
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+
+  </mat-drawer-content>
+</mat-drawer-container>
+<!-- <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#fff" type="ball-atom"></ngx-spinner> -->
