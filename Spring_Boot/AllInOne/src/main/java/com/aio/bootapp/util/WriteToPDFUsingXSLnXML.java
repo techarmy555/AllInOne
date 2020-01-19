@@ -25,9 +25,9 @@ public class WriteToPDFUsingXSLnXML {
 
 		try {
 			File pdfDir = new File(".");
-			File xmlfile = new File(pdfDir+"/src/main/resources/pdfxml/dataxml.xml");
+			File xmlfile = new File(pdfDir+"/pdfxml/dataxml.xml");
 
-			File xsltfile = new File(pdfDir+"/src/main/resources/pdfxsl/pdfxsl.xsl");
+			File xsltfile = new File(pdfDir+"/pdfxsl/pdfxsl.xsl");
 
 			pdfDir.mkdirs();
 

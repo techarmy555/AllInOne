@@ -19,7 +19,7 @@ public class ReadfromExcel {
 		try {
 
 			InputStream ExcelFileToRead = ClassLoader.getSystemClassLoader()
-					.getSystemResourceAsStream("11DEquipmentDataSheet.xlsx");
+					.getSystemResourceAsStream("xlsx/11DEquipmentDataSheet.xlsx");
 
 			wb = new XSSFWorkbook(ExcelFileToRead);
 
